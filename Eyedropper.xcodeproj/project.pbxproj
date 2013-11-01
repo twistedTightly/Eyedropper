@@ -19,6 +19,8 @@
 		6AE1CF801822AB6000A77F67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE1CF681822AB5F00A77F67 /* UIKit.framework */; };
 		6AE1CF881822AB6000A77F67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1CF861822AB6000A77F67 /* InfoPlist.strings */; };
 		6AE1CF8A1822AB6000A77F67 /* EyedropperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CF891822AB6000A77F67 /* EyedropperTests.m */; };
+		6AE1CF951822B09C00A77F67 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1CF931822B09C00A77F67 /* Main_iPhone.storyboard */; };
+		6AE1CF991823EB2E00A77F67 /* EDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1CF971823EB2E00A77F67 /* EDViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		6AE1CF851822AB6000A77F67 /* EyedropperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EyedropperTests-Info.plist"; sourceTree = "<group>"; };
 		6AE1CF871822AB6000A77F67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AE1CF891822AB6000A77F67 /* EyedropperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EyedropperTests.m; sourceTree = "<group>"; };
+		6AE1CF941822B09C00A77F67 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		6AE1CF961823EB2E00A77F67 /* EDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDViewController.h; sourceTree = "<group>"; };
+		6AE1CF971823EB2E00A77F67 /* EDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				6AE1CF731822AB5F00A77F67 /* EDAppDelegate.h */,
 				6AE1CF741822AB5F00A77F67 /* EDAppDelegate.m */,
+				6AE1CF961823EB2E00A77F67 /* EDViewController.h */,
+				6AE1CF971823EB2E00A77F67 /* EDViewController.m */,
+				6AE1CF931822B09C00A77F67 /* Main_iPhone.storyboard */,
 				6AE1CF761822AB5F00A77F67 /* Images.xcassets */,
 				6AE1CF6B1822AB5F00A77F67 /* Supporting Files */,
 			);
@@ -222,6 +230,7 @@
 			files = (
 				6AE1CF6F1822AB5F00A77F67 /* InfoPlist.strings in Resources */,
 				6AE1CF771822AB5F00A77F67 /* Images.xcassets in Resources */,
+				6AE1CF951822B09C00A77F67 /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE1CF991823EB2E00A77F67 /* EDViewController.m in Sources */,
 				6AE1CF711822AB5F00A77F67 /* main.m in Sources */,
 				6AE1CF751822AB5F00A77F67 /* EDAppDelegate.m in Sources */,
 			);
@@ -278,6 +288,14 @@
 				6AE1CF871822AB6000A77F67 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6AE1CF931822B09C00A77F67 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AE1CF941822B09C00A77F67 /* en */,
+			);
+			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -444,6 +462,7 @@
 				6AE1CF8F1822AB6000A77F67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AE1CF901822AB6000A77F67 /* Build configuration list for PBXNativeTarget "EyedropperTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +471,7 @@
 				6AE1CF921822AB6000A77F67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
