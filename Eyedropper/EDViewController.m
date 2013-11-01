@@ -19,6 +19,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        {
+            NSLog(@"Create image picker!");
+        } else {
+            NSLog(@"No image picker for me");
+        }
     }
     return self;
 }
