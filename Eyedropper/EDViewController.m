@@ -7,6 +7,7 @@
 //
 
 #import "EDViewController.h"
+#import "MobileCoreServices/UTCoreTypes.h"
 
 @interface EDViewController ()
 
@@ -18,13 +19,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-        {
-            NSLog(@"Create image picker!");
-        } else {
-            NSLog(@"No image picker for me");
-        }
+        // Set modal presentation style for image picker presentation
+        self.modalPresentationStyle = UIModalPresentationFormSheet;
+        self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     }
     return self;
 }
@@ -56,7 +53,22 @@
     /* Instantiate and set up the image picker */
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    // Configures the picker for either image capture OR media browsing (can I have both??)
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera; //UIImagePickerControllerSourceTypePhotoLibrary;
+    // Indicates what media the user will be able to access via the image picker (still images, movies, or both)
+    if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] != nil)
+    {
+        // The picker will only use still images
+        imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+    } else {
+        // No media types were available
+        return NO;
+    }
+    // Allows the user to crop and edit in pre-defined ways (unless custom UI used)
+    imagePickerController.allowsEditing = YES;
     imagePickerController.delegate = delegate;
+    
+    [controller presentViewController:imagePickerController animated:YES completion:nil];
     return YES;
 }
 
