@@ -32,8 +32,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:YES];
     [self startImagePickerFromViewController:self WithDelegate:self];
 }
 
@@ -43,10 +44,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Instantiates and configures the image picker if the device has an available camera
 - (BOOL) startImagePickerFromViewController: (UIViewController *) controller WithDelegate:
         (id <UINavigationControllerDelegate, UIImagePickerControllerDelegate>) delegate
 {
-    // First check if the device has a camera that is available
+    /* First check if the device has a camera that is available */
+    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]
         || delegate == nil)
     {
