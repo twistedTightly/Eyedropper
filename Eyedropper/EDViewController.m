@@ -54,22 +54,27 @@
         || delegate == nil)
     {
         NSLog(@"No image picker for you");
-        return NO;
+#warning Need to handle no camera available better
+        //return NO;
     }
     
     /* Instantiate and set up the image picker */
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     // Configures the picker for either image capture OR media browsing (can I have both??)
-    imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera; //UIImagePickerControllerSourceTypePhotoLibrary;
+    //imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera; //UIImagePickerControllerSourceTypePhotoLibrary; //
     // Indicates what media the user will be able to access via the image picker (still images, movies, or both)
     if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] != nil)
     {
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         // The picker will only use still images
         imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
     } else {
+#warning Need to handle no camera available better
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
         // No media types were available
-        return NO;
+        //return NO;
     }
     // Allows the user to crop and edit in pre-defined ways (unless custom UI used)
     imagePickerController.allowsEditing = YES;
