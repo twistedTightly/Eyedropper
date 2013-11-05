@@ -123,19 +123,6 @@
         UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil , nil);
     }
     
-//    // Handle a movie capture
-//    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeMovie, 0)
-//        == kCFCompareEqualTo) {
-//        
-//        NSString *moviePath = [[info objectForKey:
-//                                UIImagePickerControllerMediaURL] path];
-//        
-//        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (moviePath)) {
-//            UISaveVideoAtPathToSavedPhotosAlbum (
-//                                                 moviePath, nil, nil, nil);
-//        }
-//    }
-//    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
