@@ -90,7 +90,7 @@
 // For responding to the user tapping Cancel
 - (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker
 {
-    [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     //[[picker parentViewController] dismissModalViewControllerAnimated: YES]; // iOS 5 and lower
     //[picker release]; // pre-ARC - so is this handled now?
 }
@@ -136,7 +136,7 @@
 //        }
 //    }
 //    
-    [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
