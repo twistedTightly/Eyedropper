@@ -61,19 +61,21 @@
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     // Configures the picker for either image capture OR media browsing (can I have both??)
-    //imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera; //UIImagePickerControllerSourceTypePhotoLibrary; //
     // Indicates what media the user will be able to access via the image picker (still images, movies, or both)
     if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] != nil)
     {
+        // The image will be selected from the camera
         imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         // The picker will only use still images
         imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    } else {
-#warning Need to handle no camera available better
+    } else if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary] != nil) {
+        // The image will be selected from the exisiting photos in the library
         imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        // The picker will only use still images
         imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-        // No media types were available
-        //return NO;
+    } else {
+        // No media types available
+        return NO;
     }
     // Allows the user to crop and edit in pre-defined ways (unless custom UI used)
     imagePickerController.allowsEditing = YES;
@@ -98,7 +100,7 @@
 - (void) imagePickerController: (UIImagePickerController *) picker
  didFinishPickingMediaWithInfo: (NSDictionary *) info
 {
-    // Will indicate if it is a movie and a still image by its UTI (kUTTypeImage or kUTTypeMovie)
+    // Will indicate if it is a movie or a still image by its UTI (kUTTypeImage or kUTTypeMovie)
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     UIImage *originalImage;
     
