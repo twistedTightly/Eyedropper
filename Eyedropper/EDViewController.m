@@ -113,7 +113,7 @@
 //                                   UIImagePickerControllerEditedImage];
         originalImage = (UIImage *) [info objectForKey:
                                      UIImagePickerControllerOriginalImage];
-        
+
 //        if (editedImage) {
 //            imageToSave = editedImage;
 //        } else {
@@ -121,7 +121,7 @@
 //        }
         
         // Save the new image (original or edited) to the Camera Roll
-        UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil , nil);
+        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil, nil);
     }
     
     [picker dismissViewControllerAnimated:YES completion:nil];
