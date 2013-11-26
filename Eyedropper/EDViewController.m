@@ -60,7 +60,8 @@
     /* Instantiate and set up the image picker */
     
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    // Configures the picker for either image capture OR media browsing (can I have both??)
+    // Configures the picker for either image capture OR media browsing
+    //      (can I have both?? Eventually want ability to switch between the two)
     // Indicates what media the user will be able to access via the image picker (still images, movies, or both)
     if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] != nil)
     {
@@ -68,12 +69,14 @@
         imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         // The picker will only use still images
         imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    } else if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary] != nil) {
+    } else if ([UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary] != nil)
+    {
         // The image will be selected from the exisiting photos in the library
         imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         // The picker will only use still images
         imagePickerController.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    } else {
+    } else
+    {
         // No media types available
         return NO;
     }
@@ -92,8 +95,6 @@
 - (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
-    //[[picker parentViewController] dismissModalViewControllerAnimated: YES]; // iOS 5 and lower
-    //[picker release]; // pre-ARC - so is this handled now?
 }
 
 // For responding to the user accepting a newly-captured picture or movie
