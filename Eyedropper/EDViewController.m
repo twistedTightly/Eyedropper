@@ -48,15 +48,14 @@
 - (BOOL) startImagePickerFromViewController: (UIViewController *) controller WithDelegate:
         (id <UINavigationControllerDelegate, UIImagePickerControllerDelegate>) delegate
 {
-    /* First check if the device has a camera that is available */
-    
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]
-        || delegate == nil)
-    {
-        NSLog(@"No image picker for you");
-#warning Need to handle no camera available better
-        //return NO;
-    }
+    /* First check if the device has a camera that is available 
+        No longer relevant!
+     */
+//    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]
+//        || delegate == nil)
+//    {
+//        //return NO;
+//    }
     
     /* Instantiate and set up the image picker */
     
