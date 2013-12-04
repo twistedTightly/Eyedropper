@@ -43,19 +43,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)newColorButtonTapped:(id)sender
-{
-    [self startImagePickerFromViewController:self WithDelegate:self];
-}
-
 // Instantiates and configures the image picker if the device has an available camera
 - (BOOL) startImagePickerFromViewController: (UIViewController *) controller WithDelegate:
-        (id <UINavigationControllerDelegate, UIImagePickerControllerDelegate>) delegate
+(id <UINavigationControllerDelegate, UIImagePickerControllerDelegate>) delegate
 {
     // First check if the device has a camera or photo library that is available
     // And make sure it has a delegate
     if ((![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]
-        && ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+         && ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
         || delegate == nil)
     {
         return NO;
@@ -90,6 +85,17 @@
     
     [controller presentViewController:imagePickerController animated:YES completion:nil];
     return YES;
+}
+
+
+
+
+#pragma mark Target/Action methods
+
+// Launches the image picker when toolbar new color button is tapped
+- (IBAction)newColorButtonTapped:(id)sender
+{
+    [self startImagePickerFromViewController:self WithDelegate:self];
 }
 
 
