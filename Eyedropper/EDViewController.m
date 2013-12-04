@@ -35,13 +35,17 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    [self startImagePickerFromViewController:self WithDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)newColorButtonTapped:(id)sender
+{
+    [self startImagePickerFromViewController:self WithDelegate:self];
 }
 
 // Instantiates and configures the image picker if the device has an available camera
@@ -122,7 +126,7 @@
 //        }
         
         // Save the new image (original or edited) to the Camera Roll
-        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil, nil);
+//        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil, nil);
     }
     
     [picker dismissViewControllerAnimated:YES completion:nil];
