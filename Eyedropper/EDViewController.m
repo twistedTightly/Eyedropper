@@ -113,18 +113,8 @@
     if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
         == kCFCompareEqualTo)
     {
-        // Not dealing with edited images yet
-//        editedImage = (UIImage *) [info objectForKey:
-//                                   UIImagePickerControllerEditedImage];
         originalImage = (UIImage *) [info objectForKey:
                                      UIImagePickerControllerOriginalImage];
-
-//        if (editedImage) {
-//            imageToSave = editedImage;
-//        } else {
-//            imageToSave = originalImage;
-//        }
-        
         // Save the new image (original or edited) to the Camera Roll
 //        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil, nil);
     }
