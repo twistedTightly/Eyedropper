@@ -22,8 +22,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gz2-ch-E8H">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="+" id="djd-8D-qZF">
+                                        <connections>
+                                            <action selector="newColorButtonTapped:" destination="oHp-zk-pVR" id="bcP-ht-Wox"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jsx-fG-MJY" firstAttribute="top" secondItem="gz2-ch-E8H" secondAttribute="bottom" id="JXg-7n-Pq4"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDF-Nr-N3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
