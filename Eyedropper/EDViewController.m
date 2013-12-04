@@ -116,10 +116,14 @@
         originalImage = (UIImage *) [info objectForKey:
                                      UIImagePickerControllerOriginalImage];
         // Save the new image (original or edited) to the Camera Roll
-//        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil, nil);
+//      if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) UIImageWriteToSavedPhotosAlbum (originalImage, nil, nil, nil);
     }
     
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion: ^ {
+        // Create view controller for image editing
+        // Pass the selected image
+        // Open the view
+    }];
 }
 
 @end
