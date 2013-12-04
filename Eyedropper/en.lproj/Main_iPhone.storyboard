@@ -42,7 +42,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDF-Nr-N3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="221"/>
+            <point key="canvasLocation" x="302" y="5"/>
+        </scene>
+        <!--View Controller - Select Area-->
+        <scene sceneID="KkL-kA-KWV">
+            <objects>
+                <viewController id="Sbe-tz-nlZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lsh-fe-ipg"/>
+                        <viewControllerLayoutGuide type="bottom" id="dUM-wI-LDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yr5-wh-soa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Area" prompt="Select an area to get its average color value" id="sQA-PF-19U">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="c6a-V4-BTg"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYC-7K-dBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="5"/>
+        </scene>
+        <!--Navigation Controller - SelectImageRegionNavigationController-->
+        <scene sceneID="EwO-id-bJc">
+            <objects>
+                <navigationController storyboardIdentifier="SelectImageRegionNavigationController" title="SelectImageRegionNavigationController" definesPresentationContext="YES" id="6yu-CP-8Qx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8d4-ed-Kdt">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2bK-To-X7Y">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Sbe-tz-nlZ" kind="relationship" relationship="rootViewController" id="cAZ-Zr-mgW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lbq-qq-yTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
