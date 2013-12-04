@@ -10,7 +10,7 @@
 #import "MobileCoreServices/UTCoreTypes.h"
 
 @interface EDViewController ()
-
+@property (nonatomic, strong) UINavigationController *selectImageAreaNavController;
 @end
 
 @implementation EDViewController
@@ -88,6 +88,15 @@
 }
 
 
+#pragma mark Setters and Getters
+
+// Lazy instantiation of selectImageAreaNavController
+- (UINavigationController *)selectImageAreaNavController
+{
+    if (!_selectImageAreaNavController)
+        _selectImageAreaNavController = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectImageRegionNavigationController"];
+    return _selectImageAreaNavController;
+}
 
 
 #pragma mark Target/Action methods
@@ -126,9 +135,9 @@
     }
     
     [picker dismissViewControllerAnimated:YES completion: ^ {
-        // Create view controller for image editing
         // Pass the selected image
         // Open the view
+        [self presentViewController:self.selectImageAreaNavController animated:YES completion:nil];
     }];
 }
 
