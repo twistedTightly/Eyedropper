@@ -137,8 +137,28 @@
     
     [picker dismissViewControllerAnimated:YES completion: ^ {
         // Create an image view to display the image
-        self.selectedImageView = [[UIImageView alloc] initWithImage:originalImage];
+        self.selectedImageView = [[UIImageView alloc] init];
         self.selectedImageView.userInteractionEnabled = YES;
+        self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.selectedImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        // Resize image view so that the image will scale to fit
+        CGRect frame = self.selectedImageView.frame;
+        frame.origin.y =
+            self.selectImageAreaNavController.navigationBar.frame.origin.y +
+                self.selectImageAreaNavController.navigationBar.frame.size.height;
+        frame.size.width = self.selectImageAreaNavController.navigationBar.frame.size.width;
+        CGRect screenSize = [[UIScreen mainScreen] applicationFrame];
+        frame.size.height = screenSize.size.height - frame.origin.y;
+        self.selectedImageView.frame = frame;
+//        NSLog(@"\n\tOrigin: x %f y %f\n\tSize: height %f width %f",
+//              self.selectedImageView.frame.origin.x, self.selectedImageView.frame.origin.y,
+//              self.selectedImageView.frame.size.height, self.selectedImageView.frame.size.width);
+        
+        // Once image view has its frame set correctly, assign the image it will display
+        // This forces the image to resize to fit according to the content mode specified
+        self.selectedImageView.image = originalImage;
+        // Add the image view to the root view
         [self.selectImageAreaNavController.topViewController.view addSubview:self.selectedImageView];
         // Open the view
         [self presentViewController:self.selectImageAreaNavController animated:YES completion:nil];
