@@ -99,6 +99,20 @@
     return _selectImageAreaNavController;
 }
 
+// Lazy instantiation of selectedImageView
+- (UIImageView *)selectedImageView
+{
+    if (!_selectedImageView)
+    {
+        self.selectedImageView = [[UIImageView alloc] init];
+        self.selectedImageView.userInteractionEnabled = YES;
+        self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.selectedImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        _selectedImageView = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectImageRegionNavigationController"];
+    }
+    return _selectedImageView;
+}
+
 
 #pragma mark Target/Action methods
 
@@ -136,12 +150,6 @@
     }
     
     [picker dismissViewControllerAnimated:YES completion: ^ {
-        // Create an image view to display the image
-        self.selectedImageView = [[UIImageView alloc] init];
-        self.selectedImageView.userInteractionEnabled = YES;
-        self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
-        self.selectedImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
         // Resize image view so that the image will scale to fit
         CGRect frame = self.selectedImageView.frame;
         frame.origin.y =
