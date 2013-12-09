@@ -11,6 +11,7 @@
 
 @interface EDViewController ()
 @property (nonatomic, strong) UINavigationController *selectImageAreaNavController;
+@property (nonatomic, strong) UIImageView *selectedImageView;
 @end
 
 @implementation EDViewController
@@ -135,7 +136,10 @@
     }
     
     [picker dismissViewControllerAnimated:YES completion: ^ {
-        // Pass the selected image
+        // Create an image view to display the image
+        self.selectedImageView = [[UIImageView alloc] initWithImage:originalImage];
+        self.selectedImageView.userInteractionEnabled = YES;
+        [self.selectImageAreaNavController.topViewController.view addSubview:self.selectedImageView];
         // Open the view
         [self presentViewController:self.selectImageAreaNavController animated:YES completion:nil];
     }];
