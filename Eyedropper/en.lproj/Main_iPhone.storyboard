@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Area" prompt="Select an area to get its average color value" id="sQA-PF-19U">
+                    <navigationItem key="navigationItem" title="Select Area" prompt="The pixels in the selected area will be averaged" id="sQA-PF-19U">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="c6a-V4-BTg"/>
                     </navigationItem>
                 </viewController>
