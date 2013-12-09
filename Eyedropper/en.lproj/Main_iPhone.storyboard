@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDF-Nr-N3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="5"/>
+            <point key="canvasLocation" x="-307" y="-237"/>
         </scene>
         <!--View Controller - Select Area-->
         <scene sceneID="KkL-kA-KWV">
@@ -59,11 +59,35 @@
                     </view>
                     <navigationItem key="navigationItem" title="Select Area" prompt="The pixels in the selected area will be averaged" id="sQA-PF-19U">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="c6a-V4-BTg"/>
+                        <barButtonItem key="rightBarButtonItem" title="✓" id="utS-IQ-DCF">
+                            <connections>
+                                <segue destination="82t-i6-td9" kind="push" id="9a0-8v-bRr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYC-7K-dBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="5"/>
+            <point key="canvasLocation" x="627" y="-237"/>
+        </scene>
+        <!--View Controller - Edit Color Profile-->
+        <scene sceneID="mR0-8k-ZwS">
+            <objects>
+                <viewController id="82t-i6-td9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UGS-S7-dkq"/>
+                        <viewControllerLayoutGuide type="bottom" id="j2b-Rw-Joc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SSl-Ab-Tda">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Color Profile" id="wwI-v1-M7t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egb-KX-XEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="-244"/>
         </scene>
         <!--Navigation Controller - SelectImageRegionNavigationController-->
         <scene sceneID="EwO-id-bJc">
@@ -82,7 +106,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbq-qq-yTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="5"/>
+            <point key="canvasLocation" x="142" y="-237"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
